@@ -1,0 +1,13 @@
+{
+  "phim_1": [
+    {"name": "LÔI ĐÌNH TAM BÁ", "link": "https://www.youtube.com/watch?v=IGI5ppu4BQo"},
+    {"name": "HUYẾT CHIẾN HỔ MÔN", "link": "https://www.youtube.com/watch?v=G3iL5Q5G1L4"}
+    {"name": "LÃNH HUYẾT THẬP TAM ƯNG", "link": "https://www.youtube.com/watch?v=sUD1HLhKUOQ"}
+    {"name": "CUỘC TRỐN CHẠY", "link": "https://www.youtube.com/watch?v=BVFVFCQzfAM"}
+  ],
+  "vo_dao": [
+    {"name": "5 ĐIỀU TÂM NIỆM", "link": "tamniem.html"},
+    {"name": "10 ĐIỀU NỘI QUY", "link": "noiquy.html"}
+  ]
+}
+

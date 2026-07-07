@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Link phim</title>
+
+  <!-- Font Awesome cho icon (tùy chọn trong JSON) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="" crossorigin="anonymous">
+
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+<header>
+  <div class="marquee-container" aria-hidden="true">
+    <div class="marquee-text">LINK PHIM</div>
+  </div>
+
+  <button id="menu-toggle" class="menu-toggle-btn" aria-expanded="false" aria-controls="sidebar">
+    <i class="fas fa-bars"></i> Menu
+  </button>
+</header>
+
+<div class="container">
+  <nav class="sidebar" id="sidebar" aria-label="Chức năng chính">
+    <ul id="menu">
+      <li class="menu-item menu-section">
+        <button class="menu-link" aria-expanded="false" aria-controls="menu-phim-1">
+          <span class="menu-title">TIN TỨC</span>
+          <i class="fas fa-chevron-down arrow-icon" aria-hidden="true"></i>
+        </button>
+        <ul class="sub-menu" id="menu-phim-1" role="menu" aria-label="Tin tức 2026">
+          <!-- Rendered from JSON -->
+        </ul>
+      </li>
+
+      <li class="menu-item menu-section">
+        <button class="menu-link" aria-expanded="false" aria-controls="menu-vo-dao">
+          <span class="menu-title">VÕ ĐẠO</span>
+          <i class="fas fa-chevron-down arrow-icon" aria-hidden="true"></i>
+        </button>
+        <ul class="sub-menu" id="menu-vo-dao" role="menu" aria-label="Võ đạo">
+          <!-- Rendered from JSON -->
+        </ul>
+      </li>
+
+      <!-- Extra static section (example decoration) -->
+      <li class="menu-item menu-section">
+        <a class="menu-link plain-link" href="trang-vang-dong-gop2026.html" target="_blank" rel="noopener noreferrer">
+          <span class="menu-title">TRANG VÀNG ĐÓNG GÓP</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <main class="main-content" id="main">
+    <div class="hero">
+      <img src="https://lh3.googleusercontent.com/d/1pwLkpvSO1rrfgLMYFktd2oKuucHyq3gF" alt="Hình võ sinh" class="hero-img">
+    </div>
+
+    <section class="welcome-box">
+      <h1>Chào mừng bạn thăm võ đường Mai Việt</h1>
+      <h2 class="subhead">Chúc bạn an lành</h2>
+      <p>Hãy chọn một danh mục bên trái (hoặc bấm nút "Menu" ở phía trên nếu bạn dùng điện thoại) để bắt đầu xem.</p>
+    </section>
+
+    <section class="news-box">
+      <h1>Tin mới</h1>
+      <p>Danh sách tin sẽ cập nhật từ menu khi bạn chọn mục.</p>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <h3>MAI VIỆT TAEKWONDO</h3>
+  <p>Địa chỉ: Nhà văn hoá ấp Sân Bay, Xã Dầu Tiếng, TP Hồ Chí Minh</p>
+  <p>Hotline: 0937 551 868</p>
+  <div class="socials">
+    <a href="https://www.facebook.com/profile.php?id=61572840754253" target="_blank" rel="noopener noreferrer">Võ đường Mai Việt</a>
+    <a href="https://www.youtube.com/@maivviet" target="_blank" rel="noopener noreferrer">YouTube</a>
+    <a href="https://zalo.me/0937551868" target="_blank" rel="noopener noreferrer">Zalo</a>
+  </div>
+  <p class="copyright">© 2026 Mai Việt Taekwondo. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
