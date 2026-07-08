@@ -3,9 +3,14 @@
     {"name": "LÔI ĐÌNH TAM BÁ", "link": "https://www.youtube.com/watch?v=IGI5ppu4BQo"},
     {"name": "HUYẾT CHIẾN HỔ MÔN", "link": "https://www.youtube.com/watch?v=G3iL5Q5G1L4"},
     {"name": "LÃNH HUYẾT THẬP TAM ƯNG", "link": "https://www.youtube.com/watch?v=sUD1HLhKUOQ"},
-    {"name": "CUỘC TRỐN CHẠY", "link": "https://www.youtube.com/watch?v=BVFVFCQzfAM"}
+    {"name": "CUỘC TRỐN CHẠY", "link": "https://www.youtube.com/watch?v=BVFVFCQzfAM"},
+    {"name": "CAO THỦ TÂY VỰC", "link": "https://www.youtube.com/watch?v=ZBREkVo1VK0"},
+    {"name": "TUÝ LANG THẦN QUYỀN", "link": "https://www.youtube.com/watch?v=x66sO02IS1I"},
+    {"name": "THỊ TRẤN KUNGFU","link": "https://www.youtube.com/watch?v=bSl5u4yI4Rk"},
+    {"name": "THIÊN HẠ VÔ ĐỊCH", "link": "https://www.youtube.com/watch?v=mmcR-vDTkCs"},
+    {"name": "MỸ NHÂN GIANG HỒ", "link": "https://www.youtube.com/watch?v=ARckCMb7KIk"}
   ],
-  "vo_dao": [
+  "phim_2": [
     {"name": "5 ĐIỀU TÂM NIỆM", "link": "tamniem.html"},
     {"name": "10 ĐIỀU NỘI QUY", "link": "noiquy.html"}
   ]
