@@ -84,7 +84,7 @@ header {
 
 /* SIDEBAR: keep transform-based changes only (GPU accelerated) */
 .sidebar {
-  width: 400px;
+  width: 320px;
   background: #0c5a18;
   flex-shrink: 0;
   box-shadow: 2px 0 6px rgba(0,0,0,0.07);
@@ -202,7 +202,7 @@ header {
   /* Position submenu absolutely but show/hide with opacity & transform to avoid reflow */
   .sub-menu {
     position: absolute;
-    right: 100%;
+    left: 100%;
     top: 0;
     width: 300px;
     background: #094712;
