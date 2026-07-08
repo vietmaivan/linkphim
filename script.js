@@ -144,7 +144,7 @@ document.addEventListener("DOMContentLoaded", function () {
       };
 
       if (Array.isArray(data.phim_1)) render("menu-phim-1", data.phim_1);
-      if (Array.isArray(data.vo_dao)) render("menu-vo-dao", data.vo_dao);
+      if (Array.isArray(data.phim_2)) render("menu-phim-2", data.phim_2);
 
     } catch (err) {
       console.error("Lỗi load menu:", err);
@@ -160,7 +160,7 @@ document.addEventListener("DOMContentLoaded", function () {
         ul.innerHTML = items.map(it => `<li class="tablinks"><a href="#">${it.name}</a></li>`).join("");
       };
       renderFallback("menu-phim-1", fallback);
-      renderFallback("menu-vo-dao", fallback);
+      renderFallback("menu-phim-2", fallback);
     }
   }
 
