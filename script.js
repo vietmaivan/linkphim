@@ -24,6 +24,22 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+  document.querySelectorAll('.menu-link').forEach(button => {
+  button.addEventListener('click', () => {
+    // Tìm phần tử con ul tiếp theo
+    const subMenu = button.nextElementSibling;
+    
+    if (subMenu && subMenu.classList.contains('sub-menu')) {
+      // Toggle class để ẩn/hiện
+      subMenu.classList.toggle('collapsed');
+      
+      // Cập nhật trạng thái accessibility
+      const isExpanded = !subMenu.classList.contains('collapsed');
+      button.setAttribute('aria-expanded', isExpanded);
+    }
+  });
+});
+
   // Accordion behavior for top-level sections on mobile
   function setupSectionToggle() {
     menuSections.forEach(section => {
