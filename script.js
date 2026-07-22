@@ -146,7 +146,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (Array.isArray(data.phim_1)) render("menu-phim-1", data.phim_1);
       if (Array.isArray(data.phim_2)) render("menu-phim-2", data.phim_2);
       if (Array.isArray(data.phim_3)) render("menu-phim-3", data.phim_3);
-
+      if (Array.isArray(data.phim_4)) render("menu-phim-4", data.phim_4);
     } catch (err) {
       console.error("Lỗi load menu:", err);
 
@@ -155,6 +155,7 @@ document.addEventListener("DOMContentLoaded", function () {
         { name: "phim 1", link: "#" },
         { name: "phim 2", link: "#" },
         { name: "phim 3", link: "#" },
+        { name: "phim 4", link: "#" },
       ];
       const renderFallback = (id, items) => {
         const ul = document.getElementById(id);
