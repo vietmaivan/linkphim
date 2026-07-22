@@ -165,6 +165,7 @@ document.addEventListener("DOMContentLoaded", function () {
       renderFallback("menu-phim-1", fallback);
       renderFallback("menu-phim-2", fallback);
       renderFallback("menu-phim-3", fallback);
+      renderFallback("menu-phim-4", fallback);
     }
   }
 
