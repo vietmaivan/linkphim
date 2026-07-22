@@ -186,7 +186,7 @@ footer { padding:18px; text-align:center; margin-top:18px; color:#333; }
     left:0;
     top:72px;
     bottom:0;
-    width:320px;
+    width:350px;
     transform:translate3d(-320px,0,0);
     transition:transform 320ms cubic-bezier(.2,.9,.3,1);
     border-radius:0 8px 8px 0;
