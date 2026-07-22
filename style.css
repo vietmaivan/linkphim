@@ -203,13 +203,3 @@ footer { padding:18px; text-align:center; margin-top:18px; color:#333; }
   .marquee-text { animation:none; }
   * { transition:none !important; }
 }
-
-/* Trạng thái khi đóng menu con */
-.sub-menu.collapsed {
-  display: none;
-}
-
-/* Xoay biểu tượng mũi tên khi đóng */
-.menu-link[aria-expanded="false"] .arrow-icon {
-  transform: rotate(-90deg);
-}
