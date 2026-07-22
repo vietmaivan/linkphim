@@ -24,22 +24,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  document.querySelectorAll('.menu-link').forEach(button => {
-  button.addEventListener('click', () => {
-    // Tìm phần tử con ul tiếp theo
-    const subMenu = button.nextElementSibling;
-    
-    if (subMenu && subMenu.classList.contains('sub-menu')) {
-      // Toggle class để ẩn/hiện
-      subMenu.classList.toggle('collapsed');
-      
-      // Cập nhật trạng thái accessibility
-      const isExpanded = !subMenu.classList.contains('collapsed');
-      button.setAttribute('aria-expanded', isExpanded);
-    }
-  });
-});
-
   // Accordion behavior for top-level sections on mobile
   function setupSectionToggle() {
     menuSections.forEach(section => {
@@ -161,14 +145,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (Array.isArray(data.phim_1)) render("menu-phim-1", data.phim_1);
       if (Array.isArray(data.phim_2)) render("menu-phim-2", data.phim_2);
+      if (Array.isArray(data.phim_3)) render("menu-phim-3", data.phim_3);
 
     } catch (err) {
       console.error("Lỗi load menu:", err);
 
       // fallback: insert some static items so menu is not empty
       const fallback = [
-        { name: "Tin mẫu 1", link: "#" },
-        { name: "Tin mẫu 2", link: "#" }
+        { name: "phim 1", link: "#" },
+        { name: "phim 2", link: "#" },
+        { name: "phim 3", link: "#" }
       ];
       const renderFallback = (id, items) => {
         const ul = document.getElementById(id);
