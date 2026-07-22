@@ -154,7 +154,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const fallback = [
         { name: "phim 1", link: "#" },
         { name: "phim 2", link: "#" },
-        { name: "phim 3", link: "#" }
+        { name: "phim 3", link: "#" },
       ];
       const renderFallback = (id, items) => {
         const ul = document.getElementById(id);
@@ -163,6 +163,7 @@ document.addEventListener("DOMContentLoaded", function () {
       };
       renderFallback("menu-phim-1", fallback);
       renderFallback("menu-phim-2", fallback);
+      renderFallback("menu-phim-3", fallback);
     }
   }
 
