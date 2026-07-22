@@ -175,7 +175,7 @@ footer { padding:18px; text-align:center; margin-top:18px; color:#333; }
 /* --- RESPONSIVE --- */
 @media (max-width: 900px) {
   .container { padding:12px; gap:12px; }
-  .sidebar { width:320px; }
+  .sidebar { width:350px; }
   .hero-img { max-width:720px; }
 }
 @media (max-width: 768px) {
