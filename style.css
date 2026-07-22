@@ -55,7 +55,7 @@ header {
 
 /* SIDEBAR */
 .sidebar {
-  width: 320px;
+  width: 280px;
   background: linear-gradient(180deg,#0b4b17,#06340f);
   border-radius:8px;
   padding:6px;
@@ -68,7 +68,7 @@ header {
 #menu { list-style:none; }
 .menu-section { margin-bottom:8px; border-radius:6px; overflow:hidden; }
 
-/* Top of section (clickable on mobile) */
+/* Top of section (clickable) */
 .menu-link {
   width:100%;
   display:flex;
@@ -82,16 +82,35 @@ header {
   font-weight:700;
   border-left:4px solid transparent;
   transition:background 160ms linear, border-color 160ms linear;
+  border:none;
 }
 .menu-link.plain-link { text-decoration:none; display:flex; align-items:center; }
 
-.menu-link:hover { background: rgba(255,255,255,0.02); border-left-color:#ffeb3b; color:#fff200; }
+.menu-link:hover { 
+  background: rgba(255,255,255,0.02); 
+  border-left-color:#ffeb3b; 
+  color:#fff200; 
+}
 
 /* section title */
-.menu-title { letter-spacing:0.4px; font-size:0.95rem; }
+.menu-title { 
+  letter-spacing:0.4px; 
+  font-size:0.95rem;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
 
-/* chevron */
-.arrow-icon { transition: transform 220ms ease; color:#d6ffd6; }
+/* chevron rotation */
+.arrow-icon { 
+  transition: transform 220ms ease; 
+  color:#d6ffd6;
+  font-size:0.8rem;
+  flex-shrink:0;
+}
+.arrow-icon.rotated {
+  transform:rotate(180deg);
+}
 
 /* Decorations: small accent line above each section */
 .menu-section::before {
@@ -104,11 +123,21 @@ header {
   opacity:0.12;
 }
 
-/* SUB-MENU (desktop: show with opacity+transform to avoid reflow) */
+/* SUB-MENU (hidden by default, shown when .open) */
 .sub-menu {
   list-style:none;
-  margin-top:8px;
+  margin-top:0;
+  padding:0;
+  max-height:0;
+  overflow:hidden;
+  transition:max-height 300ms ease, padding 300ms ease, margin-top 300ms ease;
+}
+
+/* When section is open, show submenu */
+.menu-section.open .sub-menu {
+  max-height:2000px;
   padding:6px;
+  margin-top:8px;
 }
 
 /* each item */
@@ -129,8 +158,13 @@ header {
   border-left:4px solid transparent;
   transition:background 140ms linear, padding-left 140ms linear, border-left-color 140ms linear;
 }
-.sub-menu .tablinks a .menu-icon { width:20px; text-align:center; color:#bfeec3; }
-.sub-menu .tablinks a .menu-text { flex:1; }
+.sub-menu .tablinks a .menu-icon { width:20px; text-align:center; color:#bfeec3; flex-shrink:0; }
+.sub-menu .tablinks a .menu-text { 
+  flex:1; 
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
 .sub-menu .tablinks a .menu-badge {
   background:#fff200;
   color:#06380f;
@@ -139,6 +173,7 @@ header {
   padding:4px 8px;
   border-radius:12px;
   white-space:nowrap;
+  flex-shrink:0;
 }
 
 /* Hover effects */
@@ -150,7 +185,7 @@ header {
   transform:translateZ(0);
 }
 
-/* Active/selected look (you can set .active on li from JS) */
+/* Active/selected look */
 .sub-menu .tablinks.active a {
   background:linear-gradient(90deg,#06380f,#0b4b17);
   border-left-color:#ffeb3b;
@@ -175,9 +210,10 @@ footer { padding:18px; text-align:center; margin-top:18px; color:#333; }
 /* --- RESPONSIVE --- */
 @media (max-width: 900px) {
   .container { padding:12px; gap:12px; }
-  .sidebar { width:350px; }
+  .sidebar { width:280px; }
   .hero-img { max-width:720px; }
 }
+
 @media (max-width: 768px) {
   .container { flex-direction:column; padding:12px; }
   .menu-toggle-btn { display:inline-flex; position:relative; z-index:1400; }
@@ -186,16 +222,30 @@ footer { padding:18px; text-align:center; margin-top:18px; color:#333; }
     left:0;
     top:72px;
     bottom:0;
-    width:350px;
-    transform:translate3d(-320px,0,0);
+    width:280px;
+    max-width:80vw;
+    transform:translate3d(-280px,0,0);
     transition:transform 320ms cubic-bezier(.2,.9,.3,1);
     border-radius:0 8px 8px 0;
+    z-index:1300;
   }
   .sidebar.active { transform:translate3d(0,0,0); }
   main { margin-top:12px; }
-  .sub-menu { margin-top:6px; }
+  .sub-menu { margin-top:0px; }
   .menu-section::before { display:none; }
-  .menu-link { padding:12px; }
+  .menu-link { padding:12px 14px; }
+  .menu-title { font-size:0.9rem; }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    width:260px;
+    max-width:85vw;
+    transform:translate3d(-260px,0,0);
+  }
+  .menu-link { padding:10px 12px; }
+  .menu-title { font-size:0.85rem; }
+  .arrow-icon { font-size:0.7rem; }
 }
 
 /* Reduced motion for accessibility */

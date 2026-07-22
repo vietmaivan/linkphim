@@ -22,14 +22,18 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Accordion behavior for top-level sections
+  // Accordion behavior - expand/collapse on click
   function setupSectionToggle() {
     menuSections.forEach(section => {
       const toggle = section.querySelector(".menu-link");
       if (!toggle) return;
 
+      // Set initial state: all closed
+      toggle.setAttribute("aria-expanded", "false");
+
       toggle.addEventListener("click", (e) => {
         e.preventDefault();
+        
         const isOpen = section.classList.toggle("open");
         toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
 
@@ -39,18 +43,20 @@ document.addEventListener("DOMContentLoaded", function () {
           arrow.classList.toggle("rotated");
         }
 
-        // Close others
-        menuSections.forEach(s => {
-          if (s !== section) {
-            s.classList.remove("open");
-            const t = s.querySelector(".menu-link");
-            const arr = t.querySelector(".arrow-icon");
-            if (t) {
-              t.setAttribute("aria-expanded", "false");
-              if (arr) arr.classList.remove("rotated");
+        // Close others (only on desktop, on mobile allow multiple)
+        if (window.innerWidth > 768) {
+          menuSections.forEach(s => {
+            if (s !== section) {
+              s.classList.remove("open");
+              const t = s.querySelector(".menu-link");
+              const arr = t.querySelector(".arrow-icon");
+              if (t) {
+                t.setAttribute("aria-expanded", "false");
+                if (arr) arr.classList.remove("rotated");
+              }
             }
-          }
-        });
+          });
+        }
       });
     });
   }
@@ -61,6 +67,17 @@ document.addEventListener("DOMContentLoaded", function () {
     if (window.innerWidth > 768) {
       sidebar.classList.remove("active");
       menuToggle.setAttribute("aria-expanded", "false");
+      
+      // Close all menus and reset arrows on resize to desktop
+      menuSections.forEach(s => {
+        s.classList.remove("open");
+        const t = s.querySelector(".menu-link");
+        const arr = t.querySelector(".arrow-icon");
+        if (t) {
+          t.setAttribute("aria-expanded", "false");
+          if (arr) arr.classList.remove("rotated");
+        }
+      });
     }
   });
 
