@@ -253,3 +253,103 @@ footer { padding:18px; text-align:center; margin-top:18px; color:#333; }
   .marquee-text { animation:none; }
   * { transition:none !important; }
 }
+
+/* --- FOOTER (Xanh dương chủ đạo & Đa sắc) --- */
+footer {
+  background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 50%, #415a77 100%);
+  color: #e0e1dd;
+  padding: 32px 20px;
+  text-align: center;
+  margin-top: 24px;
+  border-radius: 10px 10px 0 0;
+  box-shadow: 0 -4px 16px rgba(13, 27, 42, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Đường viền trang trí phía trên footer */
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #00b4d8, #90e0ef, #ffb703, #fb8500);
+}
+
+footer h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #00b4d8;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+footer p {
+  font-size: 0.95rem;
+  color: #caf0f8;
+  margin: 6px 0;
+}
+
+/* Khu vực mạng xã hội */
+footer .socials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin: 18px 0;
+  flex-wrap: wrap;
+}
+
+/* Các nút liên kết mạng xã hội có cùng chiều rộng */
+footer .socials a {
+  display: inline-flex;
+  justify-content: center; /* Căn chữ ra giữa nút */
+  align-items: center;
+  width: 160px;            /* Cố định chiều dài bằng nhau cho các nút */
+  padding: 10px 16px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: #ffffff;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 200ms ease, box-shadow 200ms ease, filter 200ms ease;
+  will-change: transform;
+}
+
+/* Màu riêng biệt cho từng nút */
+footer .socials a:nth-child(1) {
+  background: linear-gradient(135deg, #1877f2, #0d56c0); /* Facebook */
+}
+
+footer .socials a:nth-child(2) {
+  background: linear-gradient(135deg, #ff0000, #c50000); /* YouTube */
+}
+
+footer .socials a:nth-child(3) {
+  background: linear-gradient(135deg, #0068ff, #004ecc); /* Zalo */
+}
+
+/* Hiệu ứng khi rê chuột vào */
+footer .socials a:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+  filter: brightness(1.1);
+}
+
+/* Dòng bản quyền */
+footer .copyright {
+  font-size: 0.85rem;
+  color: #90e0ef;
+  opacity: 0.85;
+  margin-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 12px;
+  display: inline-block;
+  width: 100%;
+  max-width: 400px;
+}
