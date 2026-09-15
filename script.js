@@ -49,9 +49,9 @@ document.addEventListener("DOMContentLoaded", function () {
             if (s !== section) {
               s.classList.remove("open");
               const t = s.querySelector(".menu-link");
-              const arr = t.querySelector(".arrow-icon");
               if (t) {
                 t.setAttribute("aria-expanded", "false");
+                const arr = t.querySelector(".arrow-icon");
                 if (arr) arr.classList.remove("rotated");
               }
             }
@@ -72,9 +72,9 @@ document.addEventListener("DOMContentLoaded", function () {
       menuSections.forEach(s => {
         s.classList.remove("open");
         const t = s.querySelector(".menu-link");
-        const arr = t.querySelector(".arrow-icon");
         if (t) {
           t.setAttribute("aria-expanded", "false");
+          const arr = t.querySelector(".arrow-icon");
           if (arr) arr.classList.remove("rotated");
         }
       });
@@ -141,20 +141,21 @@ document.addEventListener("DOMContentLoaded", function () {
         });
       };
 
-      if (Array.isArray(data.phim_1)) render("menu-phim-1", data.phim_1);
-      if (Array.isArray(data.phim_2)) render("menu-phim-2", data.phim_2);
-      if (Array.isArray(data.phim_3)) render("menu-phim-3", data.phim_3);
-      if (Array.isArray(data.phim_4)) render("menu-phim-4", data.phim_4);
+      // Tự động duyệt qua từ phim_1 đến phim_10
+      for (let i = 1; i <= 10; i++) {
+        const key = `phim_${i}`;
+        if (Array.isArray(data[key])) {
+          render(`menu-phim-${i}`, data[key]);
+        }
+      }
 
     } catch (err) {
       console.error("Lỗi load menu:", err);
 
       // Fallback khi không load được JSON
       const fallback = [
-        { name: "Phim 1", link: "#" },
-        { name: "Phim 2", link: "#" },
-        { name: "Phim 3", link: "#" },
-        { name: "Phim 4", link: "#" },
+        { name: "Tập 1", link: "#" },
+        { name: "Tập 2", link: "#" },
       ];
       
       const renderFallback = (id, items) => {
@@ -163,10 +164,10 @@ document.addEventListener("DOMContentLoaded", function () {
         ul.innerHTML = items.map(it => `<li class="tablinks"><a href="${it.link}">${it.name}</a></li>`).join("");
       };
 
-      renderFallback("menu-phim-1", fallback);
-      renderFallback("menu-phim-2", fallback);
-      renderFallback("menu-phim-3", fallback);
-      renderFallback("menu-phim-4", fallback);
+      // Fallback cho 10 phim
+      for (let i = 1; i <= 10; i++) {
+        renderFallback(`menu-phim-${i}`, fallback);
+      }
     }
   }
 
